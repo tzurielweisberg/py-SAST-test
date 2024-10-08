@@ -11,6 +11,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+      - name: env
+	run: env
 
       - name: Run Aqua scanner
         uses: docker://aquasec/aqua-scanner
