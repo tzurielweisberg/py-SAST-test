@@ -19,8 +19,8 @@ jobs:
 env:
    AQUA_KEY: ${{ secrets.AQUA_KEY }}
    AQUA_SECRET: ${{ secrets.AQUA_SECRET }}
-   GITHUB_TOKEN: ${{ secrets.TOKEN }}
+   GITHUB_TOKEN: ${{ github.token }}
    TRIVY_RUN_AS_PLUGIN: 'aqua'
-   ACTIONS_RUNTIME_TOKEN: ${{ secrets.TOKEN }}   
-   TRIVY_USERNAME: ${{ secrets.TRIVY_USERNAME }}
-   TRIVY_PASSWORD: ${{ secrets.TRIVY_PASSWORD }}
+   # ACTIONS_RUNTIME_TOKEN: ${{ secrets.TOKEN }}   
+   # TRIVY_USERNAME: ${{ secrets.TRIVY_USERNAME }}
+   # TRIVY_PASSWORD: ${{ secrets.TRIVY_PASSWORD }}
