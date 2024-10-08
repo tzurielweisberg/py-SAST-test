@@ -15,7 +15,7 @@ jobs:
       - name: Run Aqua scanner
         uses: docker://aquasec/aqua-scanner
         with:
-          args: trivy fs --sast --scanners misconfig  /github/workspace
+          args: trivy fs --sast --scanners misconfig --debug .
 env:
    AQUA_KEY: ${{ secrets.AQUA_KEY }}
    AQUA_SECRET: ${{ secrets.AQUA_SECRET }}
