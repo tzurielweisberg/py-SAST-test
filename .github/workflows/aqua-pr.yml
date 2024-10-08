@@ -4,10 +4,10 @@ jobs:
   aqua:
     name: Aqua scanner
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      pull-requests: write
-      packages: write
+    # permissions:
+    #   contents: write
+    #   pull-requests: write
+    #   packages: write
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
