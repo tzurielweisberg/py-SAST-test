@@ -11,6 +11,14 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '9.0'
+
+      # Step 3: Restore .NET dependencies and update lock file
+      - name: Restore and update lock file
+        run: dotnet restore ./MySampleDotNetApp.csproj --use-lock-file --force-evaluate
 
       - name: Run Aqua scanner
         uses: docker://aquasec/aqua-scanner
