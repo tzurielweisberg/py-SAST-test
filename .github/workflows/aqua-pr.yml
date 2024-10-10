@@ -20,8 +20,11 @@ jobs:
       - name: Restore and update lock file
         run: dotnet restore ./MySampleDotNetApp.csproj --use-lock-file --force-evaluate
 
+      - name: Print all environment variables
+        run: env
+
       - name: Run Aqua scanner
-        uses: docker://aquasec/aqua-scanner
+        uses: docker://aquasec/aqua-scanner:dev
         with:
           args: trivy fs --sast --scanners misconfig --debug .
 env:
